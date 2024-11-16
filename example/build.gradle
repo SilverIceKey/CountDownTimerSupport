@@ -1,14 +1,15 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion rootProject.ext.android.compileSdkVersion
-    buildToolsVersion rootProject.ext.android.buildToolsVersion
+    compileSdk 34
+    namespace "in.xiandan.countdowntimer.example"
+
     defaultConfig {
         applicationId "in.xiandan.countdowntimer.example"
-        minSdkVersion rootProject.ext.android.minSdkVersion
-        targetSdkVersion rootProject.ext.android.targetSdkVersion
-        versionCode rootProject.ext.android.targetSdkVersion
-        versionName rootProject.ext.android.versionName
+        minSdk 14
+        targetSdk 34
+        versionCode 5
+        versionName "1.0.4"
     }
     buildTypes {
         release {
@@ -20,7 +21,9 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'com.android.support:appcompat-v7:' + rootProject.ext.android.supportVersion
-    implementation 'com.android.support:recyclerview-v7:' + rootProject.ext.android.supportVersion
+    implementation 'androidx.core:core-ktx:1.8.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation project(':count-down-timer')
 }
